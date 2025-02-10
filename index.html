@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <meta content=" " description=" ">
+    <title>StonePath Estates</title>
+</head>
+<body>
+    
+    <!-- NAV AND BANNER SECTION -->
+    <div id="nav-banner">
+        
+        <!-- this is the nav placeholder -->
+         <div id="nav-placeholder"></div>
+
+        <div id="banner">
+            <h1>Welcome to StonePath Estates</h1>
+            <p>
+              We are a team dedicated to finding you the best properties
+              <br>
+               At the best deals around town!
+            </p>
+
+            <div class="buttons">
+                <a href="services.html" class="btn primary">Looking to buy a house</a>
+                <br>
+                <a href="services.html" class="btn secondary">Looking to rent</a>
+              </div>
+
+        </div>
+    </div>
+     <!-- END OF NAV AND BANNER SECTION -->
+
+
+     <h3 class="h3-services"><br>ABOUT US</h3>
+
+
+     <!-- ABOUT ME SECTION -->
+      <div id="about-me">
+        <div class="about-me-mother">
+            <div class="child-about-me">
+                <img src="images/5.jpeg" alt="">
+            </div>
+            <div class="child-about-me">
+                <h3>About US</h3>
+                <p>
+                    Hey there! I'm a passionate computer science student with hands-on experience in software development and Embedded systems/Electronics engineering. 
+                    <br>
+                    <br>
+                    Currently, I'm working on building my skills and expanding my knowledge, focusing on areas like web development, application development, and embedded systems.
+                    <br>
+                    <br>
+                    I recently completed an internship at AVSI Foundation Uganda and SCI Uganda Limited, where I worked with the IT department, gaining valuable technical expertise and contributing to projects. I'm always looking for new challenges and ways to apply my skills, especially in software development.
+                    <br>
+                    <br>
+                     When I'm not coding, you can usually find me either working on personal projects, experimenting with new tech, or hitting the gym to build muscle and stay active.
+                    <br>
+                    <br>
+                    I'm always open to new opportunities, collaborations, and ways to learn and grow in the tech world. Feel free to get in touch if you want to connect!
+                </p>
+                <a href="#">Get a home now</a>
+            </div>
+      </div>
+    </div>
+     <!-- END OF ABOUT ME SECTION -->
+
+      <h3 class="h3-services"><br>SERVICES</h3>
+
+     <!-- SERVICES SECTION -->
+      <div id="services">
+        <div class="services-mother">
+            <div class="services-child">
+                <img src="images/1.jpeg" alt="HOUSE 1">
+                <h4><a href="services.html">Buy a plot of land</a></h4>
+            </div>
+            <div class="services-child">
+                <img src="images/2.jpeg" alt="">
+                <h4><a href="services.html">Buy a house</a></h4>
+            </div>
+            <div class="services-child">
+                <img src="images/3.jpeg" alt="">
+                <h4><a href="services.html">Rent a house</a></h4>
+            </div>
+        </div>
+      </div>
+     <!-- END OF SERVICES SECTION -->
+
+    <!-- This is the footer placeholder -->
+     <div id="footer-placeholder"></div>
+
+
+     <!-- JAVASCRIPT SECTION -->
+     <script>
+        // Detect scrolling and dynamically apply the "scrolled-nav" class
+        window.addEventListener("scroll", function () {
+          const nav = document.querySelector("nav");
+          if (window.scrollY > 50) {
+            nav.classList.add("scrolled-nav"); // Add class on scroll
+          } else {
+            nav.classList.remove("scrolled-nav"); // Remove class when at the top
+          }
+        });
+
+        //this is to fetch the nav file
+        fetch('nav.html')
+            .then(response => response.text()) // this gets the text content of the file
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navigation:', error));
+
+        fetch('footer.html')
+            .then(response => response.text()) // this gets the text content of the file
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navigation:', error));
+
+        fetch('blank.html')
+            .then(response => response.text()) // this gets the text content of the file
+            .then(data => {
+                document.getElementById('blank-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navigation:', error));
+      </script>
+
+      <!-- END OF JAVASCRIPT SECTION -->
+
+</body>
+</html>

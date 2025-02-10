@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/contact.css">
+    <meta content=" " description=" ">
+    <title>Contact us</title>
+</head>
+<body>
+
+    <!-- This is the nav placeholder -->
+    <div id="nav-placeholder"></div> 
+    <div id="blank-placeholder"></div>
+
+    <!-- CONTACT US SECTION -->
+    <div id="contact-us">
+        <div class="mother-contact">
+            <div class="child-contact">
+                <h4>Inquiries/Concerns</h4>
+                <p>
+                    Name: <input type="text">
+                    <br><br>
+                    Email: <input type="text">
+                    <br><br>
+                    Message: <br><input class="message-input" type="text">
+                    <br><br><br>
+                    <a href="#" class="submit-btn">Submit</a>
+                    <br><br><br>
+                    Call:<a href="#">+256-000-000-000</a>
+                    <br>
+                    Email:<a href="#">stonepathestates@gmail.com</a>
+                </p>
+            </div>
+            <div class="child-contact">
+                <h4>Leave us a review </h4>
+            </div>
+        </div>
+    </div>
+    <!-- END OF CONTACT US SECTION -->
+
+    <!-- This is the footer placeholder -->
+    <div id="footer-placeholder"></div>
+
+     <!-- JAVASCRIPT SECTION -->
+     <script>
+        // Detect scrolling and dynamically apply the "scrolled-nav" class
+        window.addEventListener("scroll", function () {
+          const nav = document.querySelector("nav");
+          if (window.scrollY > 50) {
+            nav.classList.add("scrolled-nav"); // Add class on scroll
+          } else {
+            nav.classList.remove("scrolled-nav"); // Remove class when at the top
+          }
+        });
+
+        //this is to fetch the nav file
+        fetch('nav.html')
+            .then(response => response.text()) // this gets the text content of the file
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navigation:', error));
+
+        fetch('footer.html')
+            .then(response => response.text()) // this gets the text content of the file
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navigation:', error));
+
+        fetch('blank.html')
+            .then(response => response.text()) // this gets the text content of the file
+            .then(data => {
+                document.getElementById('blank-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navigation:', error));
+      </script>
+
+      <!-- END OF JAVASCRIPT SECTION -->
+    
+</body>
+</html>
