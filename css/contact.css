@@ -7,7 +7,8 @@ body{
 
 #contact-us{
     height: 100vh;
-    background: #f0e8e8;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Images/1.jpeg) center/cover no-repeat;
+    /* background: #f0e8e8; */
 }
 
 #contact-us .mother-contact{
@@ -22,7 +23,7 @@ body{
 #contact-us .mother-contact .child-contact{
     width: 45%;
     height: 90%;
-    background: #cac6c6;
+    background: #cac6c6ad;
     margin: auto;
     border-radius: 0 66px 0 66px;
     display: flex;
@@ -38,6 +39,8 @@ body{
 
 #contact-us .mother-contact .child-contact .message-input{
     padding: 90px 70px;
+    border-radius: 25px;
+    border: none;
 }
 
 #contact-us .mother-contact .child-contact .submit-btn{
