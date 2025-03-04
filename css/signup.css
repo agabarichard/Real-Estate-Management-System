@@ -5,7 +5,7 @@ body{
 }
 
 .mother-container{
-    height: 100vh;
+    height: 120vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,6 +56,17 @@ h2{
     border: 1px solid #ccc;
 }
 
+.input-fieldd label{
+    display: inline-block;  /* Makes the label inline */
+    margin-right: 10px;     /* Space between label and radio buttons */
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.input-fieldd input[type="radio"]{
+    margin-right: 10px;     /* Space between the radio buttons */
+}
+
 .btn{
     width: 100%;
     padding: 5px;
@@ -83,4 +94,9 @@ h2{
 
 .switch-page a:hover{
     text-decoration: underline;
+}
+
+.hidden {
+    transform: translateY(-100%); /* Move the navbar up */
+    transition: transform 0.3s ease; /* Smooth transition */
 }

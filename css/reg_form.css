@@ -66,3 +66,8 @@ body{
 .btn:hover{
     background-color: #4cae4c;
 }
+
+.hidden {
+    transform: translateY(-100%); /* Move the navbar up */
+    transition: transform 0.3s ease; /* Smooth transition */
+}

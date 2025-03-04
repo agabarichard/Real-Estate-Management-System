@@ -98,3 +98,8 @@ nav .right-nav {
     color:  #f1f2f6;
     text-decoration: underline;
 }
+
+.hidden {
+    transform: translateY(-100%); /* Move the navbar up */
+    transition: transform 0.3s ease; /* Smooth transition */
+}

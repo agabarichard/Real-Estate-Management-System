@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/services.css">
+    <script defer src="script.js"></script>
     <meta content=" " description=" ">
     <title>Services</title>
 </head>
@@ -20,34 +21,34 @@
      <div id="services">
         <div class="mother-services">
             <div class="child-services">
-                <img src="images/4.jpeg" alt="image 1">
+                <img src="images/h3.jpeg" alt="image 1">
                 <br><br><br>
                 <a href="reg_form.html">Buy this property</a>
             </div>
             <div class="child-services">
-                <img src="images/5.jpeg" alt="image 2">
+                <img src="images/h2.jpeg" alt="image 2">
                 <br><br><br>
                 <a href="reg_form.html">Buy this property</a>
             </div>
             <div class="child-services">
-                <img src="images/6.jpeg" alt="image 3">
+                <img src="images/h4.jpeg" alt="image 3">
                 <br><br><br>
                 <a href="reg_form.html">Buy this property</a>
             </div>
         </div>
         <div class="mother-services">
             <div class="child-services">
-                <img src="images/9.jpg" alt="image 4">
+                <img src="images/h5.jpeg" alt="image 4">
                 <br><br><br>
                 <a href="reg_form.html">Buy this property</a>
             </div>
             <div class="child-services">
-                <img src="images/10.jpg" alt="Image 5">
+                <img src="images/h6.jpeg" alt="Image 5">
                 <br><br><br>
                 <a href="reg_form.html">Buy this property</a>
             </div>
             <div class="child-services">
-                <img src="images/11.jpg" alt="Image 6">
+                <img src="images/h9.jpeg" alt="Image 6">
                 <br><br><br>
                 <a href="reg_form.html">Buy this property</a>
             </div>
@@ -58,43 +59,6 @@
      <!-- This is where the footer goes -->
     <div id="footer-placeholder"></div>
    
-
-     <!-- JAVASCRIPT SECTION -->
-     <script>
-        // Detect scrolling and dynamically apply the "scrolled-nav" class
-        window.addEventListener("scroll", function () {
-          const nav = document.querySelector("nav");
-          if (window.scrollY > 50) {
-            nav.classList.add("scrolled-nav"); // Add class on scroll
-          } else {
-            nav.classList.remove("scrolled-nav"); // Remove class when at the top
-          }
-        });
-
-        //this is to fetch the nav file
-        fetch('nav.html')
-            .then(response => response.text()) // this gets the text content of the file
-            .then(data => {
-                document.getElementById('nav-placeholder').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading navigation:', error));
-
-        fetch('footer.html')
-            .then(response => response.text()) // this gets the text content of the file
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading navigation:', error));
-
-        fetch('blank.html')
-            .then(response => response.text()) // this gets the text content of the file
-            .then(data => {
-                document.getElementById('blank-placeholder').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading navigation:', error));
-      </script>
-
-      <!-- END OF JAVASCRIPT SECTION -->
     
 </body>
 </html>

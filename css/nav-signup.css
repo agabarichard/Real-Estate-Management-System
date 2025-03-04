@@ -14,9 +14,9 @@ nav{
     background: rgba(0, 0, 0, 0.5);
     z-index: 1000;
     display: flex;
-    justify-content: space-between; /* Spread out the items */
-    align-items: center;
     height: 65px;
+    align-items: center;
+    justify-content: center;
 }
 
 nav a{
@@ -26,6 +26,7 @@ nav a{
     font-size: 1.1rem;
     transition: color 0.3s;
     margin: 25px;
+    font-size: 35px;
 }
 
 nav a:hover{
@@ -35,30 +36,6 @@ nav .left-nav {
     display: flex;
     gap: 20px; /* Space between the left items */
 }
-
- nav .left-nav a{
-    font-size: 35px;
-}
-
-nav .right-nav {
-    display: flex;
-    gap: 20px; /* Space between the right items */
-    margin-right: 45px;
-}
-
-#nav-banner nav {
-    position: fixed; /* Keep the nav bar fixed at the top */
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 15px 50px;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between; /* Spread out the items */
-    align-items: center;
-    height: 65px;
-  }
   
   .hidden {
     transform: translateY(-100%); /* Move the navbar up */
