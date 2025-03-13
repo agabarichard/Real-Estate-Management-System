@@ -35,12 +35,20 @@ body{
     font-size: 2.0rem;
 }
 
-#registration_form .mother-reg .child-reg .input-field h4{
+#registration_form .mother-reg .child-reg .input-field{
+    margin-bottom: 15px;
+}
+
+#registration_form .mother-reg .child-reg .input-field label{
     font-weight: bold;
     margin: 0;
 }
 
-#registration_form .mother-reg .child-reg .input-fieldd h4{
+#registration_form .mother-reg .child-reg .input-fieldd{
+    margin-bottom: 15px;
+}
+
+#registration_form .mother-reg .child-reg .input-fieldd .gg{
     font-weight: bold;
     margin: 0;
 }

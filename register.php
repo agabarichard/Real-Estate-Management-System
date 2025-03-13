@@ -3,7 +3,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db = "stonepath_estates"; // Ensure this matches your database name
+$db = "stonepath_estates"; 
 
 $conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) {

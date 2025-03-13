@@ -55,7 +55,7 @@ if (!isset($_SESSION['username'])) {
       <div id="about-me">
         <div class="about-me-mother">
             <div class="child-about-me">
-                <img src="images/h6.jpeg" alt="">
+                <img src="images/download (8).jpeg" alt="">
             </div>
             <div class="child-about-me">
                 <h3>About US</h3>
@@ -86,15 +86,15 @@ if (!isset($_SESSION['username'])) {
       <div id="services">
         <div class="services-mother">
             <div class="services-child">
-                <img src="images/h11.jpeg" alt="HOUSE 1">
+                <a href="services.html"><img src="images/h11.jpeg" alt="HOUSE 1"></a>
                 <h4><a href="services.html">Buy a plot of land</a></h4>
             </div>
             <div class="services-child">
-                <img src="images/h3.jpeg" alt="">
+                <a href="services.html"><img src="images/h3.jpeg" alt=""></a>
                 <h4><a href="services.html">Buy a house</a></h4>
             </div>
             <div class="services-child">
-                <img src="images/h8.jpeg" alt="">
+                <a href="services.html"><img src="images/h8.jpeg" alt=""></a>
                 <h4><a href="services.html">Rent a house</a></h4>
             </div>
         </div>

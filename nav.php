@@ -4,7 +4,7 @@ session_start(); // Start the session to check login status
 // If the user is logged in, display the logout link
 $logged_in = isset($_SESSION['user_id']);
 ?>
-
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +26,7 @@ $logged_in = isset($_SESSION['user_id']);
 
         <!-- Right-aligned items -->
         <div class="right-nav">
-            <a href="dashboard.php">INTERIOR DESIGN</a>
+            <a href="interior.html">INTERIOR DESIGN</a>
             <a href="services.html">SERVICES</a>
             <a href="contact.html">CONTACT-US</a>
 

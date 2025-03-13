@@ -33,17 +33,18 @@ fetch('footer.html')
     })
     .catch(error => console.error('Error loading footer:', error));
 
+// Fetch and insert the blank.html content
 fetch('blank.html')
     .then(response => response.text()) // this gets the text content of the file
     .then(data => {
         document.getElementById('blank-placeholder').innerHTML = data;
     })
-    .catch(error => console.error('Error loading navigation:', error));
+    .catch(error => console.error('Error loading blank:', error));
 
-    
+// Fetch and insert the nav_signup.html content
 fetch('nav_signup.html')
     .then(response => response.text()) // Get the text content of the file
     .then(data => {
         document.getElementById('nav_signup-placeholder').innerHTML = data;
     })
-    .catch(error => console.error('Error loading footer:', error));
+    .catch(error => console.error('Error loading nav_signup:', error));
