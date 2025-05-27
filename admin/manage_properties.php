@@ -17,8 +17,9 @@ if (isset($_GET['delete_id'])) {
     $images = $stmtImg->fetchAll();
 
     foreach ($images as $img) {
-        if (file_exists($img['image_path'])) {
-            unlink($img['image_path']);
+        $imgPath = '../' . $img['image_path'];  // Adjust this prefix to your folder structure
+        if (file_exists($imgPath)) {
+            unlink($imgPath);
         }
     }
 
@@ -29,8 +30,9 @@ if (isset($_GET['delete_id'])) {
     $stmtPreview = $pdo->prepare("SELECT preview_image FROM properties WHERE id = ?");
     $stmtPreview->execute([$deleteId]);
     $preview = $stmtPreview->fetchColumn();
-    if ($preview && file_exists($preview)) {
-        unlink($preview);
+    $previewPath = '../' . $preview; // Adjust path prefix if needed
+    if ($preview && file_exists($previewPath)) {
+        unlink($previewPath);
     }
 
     // Delete the property itself
@@ -100,7 +102,9 @@ $properties = $stmt->fetchAll();
                     <tr>
                         <td><?= htmlspecialchars($property['id']) ?></td>
                         <td>
-                            <?php if ($property['preview_image'] && file_exists($property['preview_image'])): ?>
+                            <?php
+                            $previewPath = '../' . $property['preview_image'];
+                            if ($property['preview_image'] && file_exists($previewPath)): ?>
                                 <img src="<?= htmlspecialchars($property['preview_image']) ?>" alt="Preview" class="thumb-img" />
                             <?php else: ?>
                                 <span class="text-muted">No Image</span>
@@ -115,8 +119,8 @@ $properties = $stmt->fetchAll();
                             <a href="edit_property.php?id=<?= $property['id'] ?>" class="btn btn-sm btn-primary" title="Edit">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
-                            <a href="manage_properties.php?delete_id=<?= $property['id'] ?>" 
-                               class="btn btn-sm btn-danger" 
+                            <a href="manage_properties.php?delete_id=<?= $property['id'] ?>"
+                               class="btn btn-sm btn-danger"
                                title="Delete"
                                onclick="return confirm('Are you sure you want to delete this property? This action cannot be undone.')">
                                 <i class="bi bi-trash"></i>
@@ -133,7 +137,6 @@ $properties = $stmt->fetchAll();
 </div>
 
 <?php include 'includes/footer.php'; ?>
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

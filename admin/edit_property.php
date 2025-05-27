@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Start transaction
             $pdo->beginTransaction();
 
-            // Update property main data (preview_image temporarily null)
+            // Update property main data (without changing preview_image yet)
             $stmtUpdate = $pdo->prepare("UPDATE properties SET title = ?, description = ?, price = ?, location = ?, status = ?, category = ? WHERE id = ?");
             $stmtUpdate->execute([$title, $description, $price, $location, $status, $category, $propertyId]);
 
@@ -70,23 +70,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (!empty($_POST['delete_images'])) {
                 foreach ($_POST['delete_images'] as $delImgId) {
                     $delImgId = (int)$delImgId;
-                    // Fetch image path
+
+                    // Fetch image path (relative)
                     $stmtImgPath = $pdo->prepare("SELECT image_path FROM property_images WHERE id = ? AND property_id = ?");
                     $stmtImgPath->execute([$delImgId, $propertyId]);
-                    $imgPath = $stmtImgPath->fetchColumn();
+                    $imageDbPath = $stmtImgPath->fetchColumn();
 
-                    if ($imgPath && file_exists($imgPath)) {
-                        unlink($imgPath);
+                    if ($imageDbPath) {
+                        // Delete physical file
+                        $fullPath = '../' . $imageDbPath; // Adjust '../' if your folder structure differs
+                        if (file_exists($fullPath)) {
+                            unlink($fullPath);
+                        }
+
+                        // If deleted image was preview image, reset preview_image_id
+                        if ($property['preview_image'] === $imageDbPath) {
+                            $preview_image_id = null;
+                        }
                     }
 
                     // Delete DB record
                     $stmtDelImg = $pdo->prepare("DELETE FROM property_images WHERE id = ?");
                     $stmtDelImg->execute([$delImgId]);
-
-                    // If deleted image was the preview image, reset preview_image_id
-                    if ($property['preview_image'] && $property['preview_image'] === $imgPath) {
-                        $preview_image_id = null;
-                    }
                 }
             }
 
