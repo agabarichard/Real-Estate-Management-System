@@ -6,10 +6,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Database connection
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db = "stonepath_estates"; 
+include 'connect.php';
 
 // Create a new database connection
 $conn = new mysqli($host, $user, $pass, $db);

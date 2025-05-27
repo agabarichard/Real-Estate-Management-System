@@ -2,15 +2,7 @@
 session_start(); // Start the session
 
 // Database connection
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db = "stonepath_estates";
-
-$conn = new mysqli($host, $user, $pass, $db);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include './includes/connect.php';
 
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
